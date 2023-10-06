@@ -36,7 +36,7 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
                                     <ul className="bg-white absolute top-6 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg">
                                         {subMenuData.map((submenu) => {
                                             return (
-                                                <Link key={submenu.id} href="/">
+                                                <Link key={submenu.id} href="/category/sneakers">
                                                     <li className="h-12 flex justify-between items-center px-3 hover:bg-black/{0.03} rounded-md">
                                                         {submenu.name}
                                                         <span className="opacity-50 text-sm">78</span>
