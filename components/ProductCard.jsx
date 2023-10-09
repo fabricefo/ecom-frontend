@@ -11,7 +11,7 @@ const ProductCard = () => {
         >
             <img className="w-full" src="/product-1.webp" alt="Product Image"/>
             <div className="p-4 text-black/[0.9]">
-                <h2 className="text-lg font-medium">Product Name</h2>
+                <h2 className="text-lg font-medium">Jordan Retro 6 G</h2>
                 <div className="flex items-center text-black/[0.5]">
                     <p className="mr-2 text-lg font-semibold">
                         &#8377;20.00

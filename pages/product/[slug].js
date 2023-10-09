@@ -87,7 +87,7 @@ const ProductDetails = ({ product, products }) => {
                             {/* HEADING END */}
 
                             {/* SIZE START */}
-                            <div className="grid grid-cols-3 gap-2">
+                            <div id="sizesGrid" className="grid grid-cols-3 gap-2">
                                 <div className="border rounded-md text-center py-3 font-medium hover:border-black cursor-pointer">
                                     UK 6
                                 </div>
@@ -133,8 +133,26 @@ const ProductDetails = ({ product, products }) => {
 
                         {/* ADD TO CART BUTTON START */}
                         <button
-                            className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75">
-                            Add to Cart
+                            className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
+                            onClick={() => {
+                                if (!selectedSize) {
+                                    setShowError(true);
+                                    document.getElementById("sizesGrid").scrollIntoView({
+                                                                            block: "center",
+                                                                            behavior: "smooth",
+                                                                        });
+                                } else {
+                                    dispatch(
+                                        addToCart({
+                                            ...product?.data?.[0],
+                                            selectedSize,
+                                            oneQuantityPrice: p.price,
+                                        })
+                                    );
+                                    notify();
+                                }
+                            }}>
+                            Add to Cart 
                         </button>
                         {/* ADD TO CART BUTTON END */}
 
